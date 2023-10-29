@@ -6,7 +6,7 @@ export const useAppStore = defineStore('app', {
   }),
 
   getters: {
-    isLoggedIn (state) {
+    getIsLoggedIn (state) {
       return state.isLoggedIn
     }
   },

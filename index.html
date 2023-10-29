@@ -3,6 +3,8 @@
   <head>
     <title><%= productName %></title>
 
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2/dist/quasar.rtl.prod.css" rel="stylesheet" type="text/css">
+
     <meta charset="utf-8">
     <meta name="description" content="<%= productDescription %>">
     <meta name="format-detection" content="telephone=no">
@@ -17,5 +19,10 @@
   </head>
   <body dir="rtl">
     <!-- quasar:entry-point -->
+
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2/dist/lang/he.umd.prod.js"></script>
+    <script>
+      Quasar.lang.set(Quasar.lang.he)
+    </script>
   </body>
 </html>

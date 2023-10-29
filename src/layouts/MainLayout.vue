@@ -8,10 +8,11 @@
           پارکه
         </q-toolbar-title>
 
-        <div v-if="!appStore.isLoggedIn">
+        <div v-if="appStore.isLoggedIn">
+        </div>
+        <div v-else>
 
-
-          <q-btn dense flat round icon="fa-user" @click="toggleLeftDrawer" />
+          <q-btn dense flat icon="login" :to="{name: 'Login'}">ورود</q-btn>
         </div>
       </q-toolbar>
     </q-header>
