@@ -1,7 +1,7 @@
 <template>
   <q-card>
     <q-card-section>
-    <q-input v-model="name" label="عنوان"></q-input>
+      <q-input v-model="name" label="عنوان"></q-input>
       <q-input v-model="date" mask="14##/##/##" label="تاریخ"></q-input>
       <q-input v-model="time" mask="##:##" label="زمان"></q-input>
     </q-card-section>
@@ -12,17 +12,23 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {api} from "boot/axios";
+import { computed, ref } from "vue";
+import { api } from "boot/axios";
 
-let name = ref('')
-let date = ref('')
-let time = ref('')
+let name = ref("");
+let date = ref("");
+let time = ref("");
 
+defineProps({
+  classRoom() {
+    return { name: "" };
+  },
+});
+
+computed();
 function save() {
   api.post("classrooms/create", {
-    name: name.value
-  })
-
+    name: name.value,
+  });
 }
 </script>

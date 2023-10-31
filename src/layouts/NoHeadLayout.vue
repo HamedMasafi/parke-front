@@ -1,6 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf" >
-
+  <q-layout view="lHh Lpr lFf">
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -8,8 +7,6 @@
 </template>
 
 <script setup>
-
-import {useAppStore} from "stores/app";
-const appStore = useAppStore()
-
+import { useAppStore } from "stores/app";
+const appStore = useAppStore();
 </script>

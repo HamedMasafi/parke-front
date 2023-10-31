@@ -1,13 +1,13 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useAppStore = defineStore('app', {
+export const useAppStore = defineStore("app", {
   state: () => ({
-    isLoggedIn: false
+    isLoggedIn: false,
   }),
 
   getters: {
-    getIsLoggedIn (state) {
-      return state.isLoggedIn
-    }
+    getIsLoggedIn(state) {
+      return state.isLoggedIn;
+    },
   },
-})
+});

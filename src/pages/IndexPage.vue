@@ -1,22 +1,20 @@
 <template>
-  <q-page>
+  <q-page padding>
     <p>Parke</p>
 
+    <p>به پارکه خوش آمدید. سایت در دست ساخت می‌باشد</p>
 
-    <p>
-      به پارکه خوش آمدید. سایت در دست ساخت می‌باشد
-    </p>
-
-    <router-link :to="{name: 'AdminClassRoomList'}">لیست</router-link>
-    <div v-if="!appStore.isLoggedIn">
-      ثبت نام در سایت
-    </div>
+    <router-link :to="{ name: 'AdminClassRoomList' }">لیست</router-link>
+    <br />
+    <router-link :to="{ name: 'AdminClassCreate' }">ایجاد</router-link>
+    <br />
+    <router-link :to="{ name: 'AdminClassCreate' }">ایجاد کلاس</router-link>
+    <div v-if="!appStore.isLoggedIn">ثبت نام در سایت</div>
   </q-page>
 </template>
 
 <script setup>
-import {useAppStore} from "stores/app";
+import { useAppStore } from "stores/app";
 
-const appStore = useAppStore()
-
+const appStore = useAppStore();
 </script>
