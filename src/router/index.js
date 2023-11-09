@@ -6,6 +6,8 @@ import {
   createWebHashHistory,
 } from "vue-router";
 import routes from "./routes";
+import {useAppStore} from "stores/app";
+import {useAuthStore} from "stores/auth";
 
 /*
  * If not building with SSR mode, you can
@@ -32,6 +34,33 @@ export default route(function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.VUE_ROUTER_BASE),
   });
+
+
+  Router.beforeEach((to, from, next) => {
+    const appStore = useAppStore()
+    const authStore = useAuthStore()
+
+    appStore.isLoading = false
+    // redirect to login page if not logged in and trying to access a restricted page
+    const { authorize } = to.meta;
+    //const currentUser = authenticationService.currentUserValue;
+
+    if (authorize) {
+      if (!authStore.isLoggedIn) {
+        // not logged in so redirect to login page with the return url
+        return next({ name: 'Login', query: { returnUrl: to.path } });
+      }
+
+      // check if route is restricted by role
+      if (authorize.length && !authorize.includes(authStore.role)) {
+        // role not authorised so redirect to home page
+        console.log("Access denied for:", authorize, authStore.role)
+        return next({ name: 'AccessDenied' });
+      }
+    }
+
+    next()
+  })
 
   return Router;
 });

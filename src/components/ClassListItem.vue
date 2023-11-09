@@ -27,7 +27,7 @@ defineProps({
 
 computed();
 function save() {
-  api.post("classrooms/create", {
+  api.post("admin/classrooms/create", {
     name: name.value,
   });
 }

@@ -73,14 +73,30 @@
 
 // app global css in SCSS form
 body {
-  direction: rtl;
   font-family: Vazirmatn;
 }
 
 q-icon {
   justify-content: unset;
 }
+//
+//.q-dialog-plugin {
+//  direction: rtl;
+//}
+//
+//.rtl {
+//  direction: ltr;
+//}
 
-.q-dialog-plugin {
-  direction: rtl;
+
+td.option-buttons {
+  width: 0;
+}
+
+div.spaced-cells {
+  div {
+    .q-card {
+      margin: 6px;
+    }
+  }
 }

@@ -1,13 +1,9 @@
-import { defineStore } from "pinia";
+import {defineStore} from "pinia";
+import {ref} from "vue";
+import {Role} from "boot/role";
 
 export const useAppStore = defineStore("app", {
   state: () => ({
-    isLoggedIn: false,
-  }),
-
-  getters: {
-    getIsLoggedIn(state) {
-      return state.isLoggedIn;
-    },
-  },
+    isLoading: false
+  })
 });

@@ -1,5 +1,5 @@
 <template>
-  <q-input v-model="password" outlined :type="isPwd ? 'password' : 'text'">
+  <q-input  outlined :type="isPwd ? 'password' : 'text'">
     <template v-slot:append>
       <q-icon
         :name="isPwd ? 'visibility_off' : 'visibility'"
