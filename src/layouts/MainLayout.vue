@@ -5,7 +5,7 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title class="text-white">
-          <router-link :to="{ name: 'Home' }"> پارکه </router-link>
+          <router-link :to="{ name: 'UserIndex' }"> پارکه </router-link>
         </q-toolbar-title>
 
         <div v-if="authStore.isLoggedIn">

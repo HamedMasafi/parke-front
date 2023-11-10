@@ -63,7 +63,6 @@ function login() {
     })
     .then((response) => {
       isLoading.value = false;
-      debugger
 
       if (response.data.success === true) {
         appStore.isLoggedIn = true;

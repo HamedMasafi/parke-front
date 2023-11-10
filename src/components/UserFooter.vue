@@ -17,7 +17,7 @@ const links = ref([
   {
     title: 'صفحه اصلی',
     icon: 'fa fa-home',
-    to: 'Home'
+    to: 'UserActiveClasses'
   },
   {
     title: 'کلاس‌های من',
