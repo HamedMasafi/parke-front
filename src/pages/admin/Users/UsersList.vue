@@ -79,7 +79,7 @@ api
   .then(response => users.value = response.data.data);
 
 function saveUpdate(u) {
-  debugger
+  
   const data = {
     Id: u.value.id,
     firstName: u.value.firstName,
