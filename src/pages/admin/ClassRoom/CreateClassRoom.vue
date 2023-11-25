@@ -50,6 +50,34 @@
             جلسه شماره {{ index + 1 }}
           </p>
 
+          <q-input filled v-model="session.date" mask="date" :rules="['date']">
+            <template v-slot:append>
+              <q-icon name="event" class="cursor-pointer">
+                <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+                  <q-date v-model="session.date" mask="yyyy/mm/dd" calendar="persian">
+                    <div class="row items-center justify-end">
+                      <q-btn v-close-popup label="Close" color="primary" flat />
+                    </div>
+                  </q-date>
+                </q-popup-proxy>
+              </q-icon>
+            </template>
+          </q-input>
+
+          <q-input filled v-model="session.time" mask="time" :rules="['time']">
+            <template v-slot:append>
+              <q-icon name="access_time" class="cursor-pointer">
+                <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+                  <q-time v-model="session.time" mask="HH:mm" format24h>
+                    <div class="row items-center justify-end">
+                      <q-btn v-close-popup label="Close" color="primary" flat />
+                    </div>
+                  </q-time>
+                </q-popup-proxy>
+              </q-icon>
+            </template>
+          </q-input>
+<!--
           <q-item v-ripple clickable>
             <div class="cursor-pointer">
               زمان:
@@ -95,7 +123,7 @@
               </q-popup-edit>
             </div>
           </q-item>
-
+-->
         </q-card-section>
         <q-card-actions>
           <q-btn
@@ -173,11 +201,12 @@ function add() {
 
     //debugger;
     var sh = new ShamsiCalendar();
+    alert(sessions.value[sessions.value.length - 1].date)
     sh.parse(sessions.value[sessions.value.length - 1].date)
 
-    var tommorow = new ShamsiCalendar();
-    tommorow.from_jdn(sh.jdn + 1)
-    newSession.date = tommorow.toString()
+    var tomorrow = new ShamsiCalendar();
+    tomorrow.from_jdn(sh.jdn + 1)
+    newSession.date = tomorrow.toString()
   }
   sessions.value.push(newSession);
 }
@@ -212,7 +241,7 @@ function isSessionValid(session) {
 .q-card {
   display: inline-block;
   width: 200px;
-  height: 220px;
+  height: 280px;
 
   .add {
     height: 100%;

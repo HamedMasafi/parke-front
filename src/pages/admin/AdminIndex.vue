@@ -27,11 +27,24 @@
       </template>
     </q-banner>
 
+    <q-banner :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'" class="q-my-md" v-if="authStore.role === Role.Admin">
+      <template v-slot:avatar>
+        <q-icon name="fa fa-key" color="primary" />
+      </template>
+      در این بخش می‌توانید ادمین‌ها را مدیریت کنید و ادمین جدیدی تعریف کنید
+      <template v-slot:action>
+        <q-btn flat color="primary" label="ورود" :to="{name: 'AdminAdminsList'}" />
+      </template>
+    </q-banner>
+
   </q-page>
 </template>
 
 <script setup>
 import AlertBox from "components/AlertBox.vue";
+import {useAuthStore} from "stores/auth";
+import {Role} from "boot/role";
 
+const authStore = useAuthStore();
 </script>
 

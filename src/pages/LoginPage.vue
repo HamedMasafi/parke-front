@@ -3,7 +3,7 @@
     :class="isLoading"
     class="fullscreen bg-blue text-center q-pa-md flex flex-center"
   >
-    <q-page class="flex flex-center" padding>
+    <div class="flex flex-center">
       <q-card>
         <q-card-section>
           <transition
@@ -30,7 +30,7 @@
           label-style="font-size: 1.1em"
         />
       </q-card>
-    </q-page>
+    </div>
   </div>
 </template>
 

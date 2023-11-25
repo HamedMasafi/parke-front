@@ -40,7 +40,6 @@ const authStore = useAuthStore();
 const $q = useQuasar()
 const router = useRouter();
 
-function logout() {
   function logout() {
     $q.dialog({
       title: 'خروج',
@@ -53,5 +52,5 @@ function logout() {
       router.push({name: 'Login'})
     });
   }
-}
+
 </script>

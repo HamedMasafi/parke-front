@@ -15,6 +15,7 @@
   "dependencies": {
     "@mspiderv/vuejwtauth": "^1.2.2",
     "@quasar/extras": "^1.16.4",
+    "@vueuse/core": "^10.6.1",
     "axios": "^1.2.1",
     "jwt-decode": "^4.0.0",
     "pinia": "^2.0.11",

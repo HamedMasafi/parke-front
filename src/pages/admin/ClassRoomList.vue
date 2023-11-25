@@ -16,6 +16,7 @@
           <q-card-actions>
             <q-btn :to="{name: 'AdminClassRegisters', params: {id: cls.id}}" flat icon="people" round></q-btn>
             <q-btn :to="{name: 'AdminClassEdit', params: {id: cls.id}}" flat icon="edit" round></q-btn>
+            <q-btn :to="{name: 'AdminClassDetails', params: {id: cls.id}}" flat icon="list" round></q-btn>
           </q-card-actions>
         </q-card>
       </div>

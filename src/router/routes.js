@@ -20,6 +20,18 @@ const admin_pages = [
     meta: {authorize: [Role.Admin]}
   },
   {
+    name: "AdminClassDetails",
+    path: "classrooms/details/:id",
+    component: () => import("pages/admin/ClassRoom/ClassRoomDetails.vue"),
+    meta: {authorize: [Role.Admin]}
+  },
+  {
+    name: "UploadSessionVideo",
+    path: "classrooms/upload/:id",
+    component: () => import("pages/admin/ClassRoom/UploadSessionVideo.vue"),
+    meta: {authorize: [Role.Admin]}
+  },
+  {
     name: "AdminClassEdit",
     path: "classrooms/edit/:id",
     component: () => import("pages/admin/ClassRoom/CreateClassRoom.vue"),
@@ -33,6 +45,12 @@ const admin_pages = [
     name: "AdminUsersList",
     path: "users/list",
     component: () => import("pages/admin/Users/UsersList.vue"),
+  },
+
+  {
+    name: "AdminAdminsList",
+    path: "admins/list",
+    component: () => import("pages/admin/AdminsList.vue"),
   },
 ];
 const user_pages = [
@@ -52,6 +70,11 @@ const user_pages = [
     name: "UserClassView",
     path: "classes/:id",
     component: () => import("pages/user/ClassView.vue"),
+  },
+  {
+    name: "WatchVideo",
+    path: "video/:id",
+    component: () => import("pages/user/WatchVideo.vue"),
   },
   {
     name: "UserProfile",
